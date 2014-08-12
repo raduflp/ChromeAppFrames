@@ -1,7 +1,7 @@
 ChromeAppFrames
 ===============
 
-An application to be used as a starting point for Frameless Chrome Packaged Apps. It provides a more native-looking title bar and window controls (Windows, Mac, Ubuntu).
+An application to be used as a starting point for Frameless Chrome Packaged Apps. It provides a more native-looking title bar and window controls for  Windows, Mac OS and Ubuntu. At start-up the correct Frame style is set depending on the OS in which it is opened.
 
 Screenshots
 ===============
