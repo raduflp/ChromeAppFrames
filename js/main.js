@@ -1,6 +1,7 @@
-$('#window-minimize').click(function(e) { chrome.app.window.current().minimize(); });
-$('#window-close').click(function(e) { window.close(); });
 
+
+
+$('#window-restore').hide();
 
 
 var platform = navigator.platform;
@@ -12,6 +13,26 @@ else if (/linux/i.test(platform)) {
 } else {
     $(".frame").addClass("os-win");
 }
+
+
+$('#window-minimize').click(function(e) { chrome.app.window.current().minimize(); });
+$('#window-close').click(function(e) { window.close(); });
+
+$('#window-maximize').click(function(e) { 
+    $('#window-maximize').hide();
+    $('#window-restore').show();
+    chrome.app.window.current().maximize();
+});
+
+$('#window-restore').click(function(e) { 
+    $('#window-restore').hide();
+    $('#window-maximize').show();
+    chrome.app.window.current().restore();
+});
+
+
+
+
 
 
 $('#OSStyle').change(function(e) { 

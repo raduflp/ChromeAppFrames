@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Chrome App Frames",
-  "version": "0.1",
+  "version": "0.2",
   "author": "Radu Filip",
   "offline_enabled": true,
   "permissions": [],

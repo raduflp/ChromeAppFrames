@@ -131,11 +131,15 @@
     background-color: #E04343;
 }
 
-.os-win #window-minimize {
+.os-win #window-minimize,
+.os-win #window-maximize,
+.os-win #window-restore {
     margin-right: 1px;
 }
 
-.os-win #window-minimize:hover {
+.os-win #window-minimize:hover,
+.os-win #window-maximize:hover,
+.os-win #window-restore:hover {
     background-color: #485F73;
 }
 
@@ -156,6 +160,12 @@
     margin-bottom: 8px;
 }
 
+.os-lnx #window-maximize,
+.os-lnx #window-restore,
+.os-mac #window-maximize,
+.os-mac #window-restore {
+    float: right;
+}
 
 .os-mac #window-close {
     border-color: #F75651;
@@ -180,7 +190,16 @@
     background-color: #FCD378;
 }
 
+.os-mac #window-maximize,
+.os-mac #window-restore {
+    border-color: #90CD43;
+}
 
+.os-mac #window-maximize:hover,
+.os-mac #window-restore:hover {
+    border-color: #B5E27B;
+    background-color: #B5E27B;
+}
 
 
 .container {
