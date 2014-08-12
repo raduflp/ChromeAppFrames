@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome App Frames",
+  "version": "0.1",
+  "author": "Radu Filip",
+  "offline_enabled": true,
+  "permissions": [],
+  "app": {
+    "background": {
+      "scripts": ["app.js"]
+    }
+  },
+  "minimum_chrome_version": "23"
+}
