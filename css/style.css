@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/* --------- General Frame Styles --------- */
+
 .frame {
     -webkit-app-region: drag;
     height: 25px;
@@ -12,88 +14,21 @@
     padding: 0;
 }
 
-    .frame.os-win {
-        background-color: #344459;
-    }
 
-    .frame.os-lnx {
-        background-color: #4C4A44;
-    }
+.os-win .frame {
+    background-color: #344459;
+}
 
-    .frame.os-mac {
-        background-color: #B5B5B5;
-    }
-    
-    .frame a {
-        -webkit-app-region: no-drag;
-        color: #9f9f9f;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
+.os-lnx .frame {
+    background-color: #4C4A44;
+}
 
-    }
+.os-mac .frame {
+    background-color: #E8E8E8;
+}
 
-        .frame.os-win a {
-            height: 100%;
-            width: 28px;
-            margin: 0;
-            padding-top: 2px;
-        }
 
-        .frame.os-lnx a,
-        .frame.os-mac a {
-            height: 18px;
-            width: 18px;
-            border-radius: 10px;
-            margin-top: 4px;
-            margin-left: 4px;
-            background-color: #75746D;
-        }
-
-        .frame.os-mac a {
-            background-color: transparent;
-            border-style: solid;
-            border-width: 2px;
-        }
-
-        .frame a:hover {
-            cursor: default;
-        }
-
-            .frame.os-win a:hover {
-                background-color: #485F73;
-            }
-
-            .frame.os-lnx a:hover,
-            .frame.os-mac a:hover {
-                background-color: #C0C0C0;
-            }
-
-            .frame.os-mac a:hover img {
-                opacity: 1;
-            }
-
-        .frame a img {
-            vertical-align: middle;
-        }
-        
-        .frame.os-win a img {
-            width: 10px;
-            height: 10px;
-        }
-
-        .frame.os-lnx a img,
-        .frame.os-mac a img {
-            width: 8px;
-            height: 8px;
-            margin-bottom: 3px;
-        }
-
-        .frame.os-mac a img {
-            opacity: 0;
-            transition: opacity 0.30s;
-            margin-bottom: 7px;
-        }
+/* --------- Frame Title Styles --------- */
 
     .frame .ec-title {
         margin-top: -2px;
@@ -103,21 +38,102 @@
         color: #EFECE3;
     }
 
-        .frame.os-lnx .ec-title,
-        .frame.os-mac .ec-title {
+        .os-lnx .frame .ec-title,
+        .os-mac .frame .ec-title {
             width: 75%;
             text-align: center;
         }
 
-        
+        .os-mac .frame .ec-title {
+          color: #2F2C2C;
+        }
 
-    .frame.os-win .ec-controls {
+        .os-mac .frame .ec-title img {
+            -webkit-filter: invert(80%);
+        }
+
+
+/* --------- Control Buttons Styles --------- */
+
+.frame a {
+    -webkit-app-region: no-drag;
+    color: #9f9f9f;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+    .os-win .frame a {
+        height: 100%;
+        width: 28px;
+        margin: 0;
+        padding-top: 2px;
+    }
+
+    .os-lnx .frame a,
+    .os-mac .frame a {
+        height: 18px;
+        width: 18px;
+        border-radius: 10px;
+        margin-top: 4px;
+        margin-left: 4px;
+        background-color: #75746D;
+    }
+
+    .os-mac .frame a {
+/*        background-color: transparent;*/
+        border-style: solid;
+        border-width: 2px;
+    }
+
+    .frame a:hover {
+        cursor: default;
+    }
+
+        .os-win .frame a:hover {
+            background-color: #485F73;
+        }
+
+        .os-lnx .frame a:hover,
+        .os-mac .frame a:hover {
+            background-color: #C0C0C0;
+        }
+
+        .os-mac .frame .ec-controls a:hover img {
+            opacity: 1;
+        }
+
+    .frame a img {
+        vertical-align: middle;
+    }
+
+    .os-win .frame a img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .os-lnx .frame a img,
+    .os-mac .frame a img {
+        width: 8px;
+        height: 8px;
+        margin-bottom: 3px;
+    }
+
+    .os-mac .frame a img {
+        opacity: 0;
+        margin-bottom: 7px;
+        -webkit-filter: invert(80%);
+    }
+
+
+
+    .os-win .frame .ec-controls {
         height: 100%;
         float: right;
     }
 
-    .frame.os-lnx .ec-controls,
-    .frame.os-mac .ec-controls{
+    .os-lnx .frame .ec-controls,
+    .os-mac .frame .ec-controls{
         height: 100%;
         float: left;
         direction: rtl;
@@ -167,38 +183,50 @@
     float: right;
 }
 
-.os-mac #window-close {
-    border-color: #F75651;
-}
+    /* --- MAC ---*/
+    .os-mac #window-close {
+        border-color: #DF3A3D;
+        background-color: #FB5959;
+    }
 
-.os-mac #window-close:hover {
-    border-color: #FD7E7A;
-    background-color: #FD7E7A;
-}
+    .os-mac #window-close:hover {
+/*        border-color: #FD7E7A;
+        background-color: #FD7E7A;*/
+    }
 
-.os-mac #window-minimize {
-    border-color: #F3BB65;
-}
+    .os-mac #window-minimize {
+        border-color: #DF9C3B;
+        background-color: #FEBA4B;
+        /*border-color: #F3BB65;*/
+    }
 
-.os-mac #window-minimize img {
-    width: 10px;
-    margin-bottom: 12px;
-}
+    .os-mac #window-minimize img {
+        width: 10px;
+        margin-bottom: 12px;
+    }
 
-.os-mac #window-minimize:hover {
-    border-color: #FCD378;
-    background-color: #FCD378;
-}
+    .os-mac #window-minimize:hover {
+/*        border-color: #FCD378;
+        background-color: #FCD378;*/
+    }
 
-.os-mac #window-maximize,
-.os-mac #window-restore {
-    border-color: #90CD43;
-}
+    .os-mac #window-maximize,
+    .os-mac #window-restore {
+        border-color: #0EAB41;
+        background-color: #00C955;
+    }
 
-.os-mac #window-maximize:hover,
-.os-mac #window-restore:hover {
-    border-color: #B5E27B;
-    background-color: #B5E27B;
+    .os-mac #window-maximize:hover,
+    .os-mac #window-restore:hover {
+/*        border-color: #B5E27B;
+        background-color: #B5E27B;*/
+    }
+
+
+.icon-small {
+    height: 22px;
+    width: 22px;
+    margin: 3px 1px -5px 0;
 }
 
 
@@ -210,7 +238,7 @@
 
 
 body {
-    background: #EFECE3;
+    background: #F9F9F9;
     min-height: 150px;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;

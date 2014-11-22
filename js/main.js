@@ -1,30 +1,27 @@
-
-
-
 $('#window-restore').hide();
 
 
 var platform = navigator.platform;
 
 if (/mac/i.test(platform))
-    $(".frame").addClass("os-mac");
+    $("body").addClass("os-mac");
 else if (/linux/i.test(platform)) {
-    $(".frame").addClass("os-lnx");
+    $("body").addClass("os-lnx");
 } else {
-    $(".frame").addClass("os-win");
+    $("body").addClass("os-win");
 }
 
 
 $('#window-minimize').click(function(e) { chrome.app.window.current().minimize(); });
 $('#window-close').click(function(e) { window.close(); });
 
-$('#window-maximize').click(function(e) { 
+$('#window-maximize').click(function(e) {
     $('#window-maximize').hide();
     $('#window-restore').show();
     chrome.app.window.current().maximize();
 });
 
-$('#window-restore').click(function(e) { 
+$('#window-restore').click(function(e) {
     $('#window-restore').hide();
     $('#window-maximize').show();
     chrome.app.window.current().restore();
@@ -33,16 +30,26 @@ $('#window-restore').click(function(e) {
 
 
 
-
-
-$('#OSStyle').change(function(e) { 
-    $(".frame").removeClass("os-lnx os-mac os-win");
+$('#OSStyle').change(function(e) {
+    $("body").removeClass("os-lnx os-mac os-win");
     if ($(this).val() == "mac")
-        $(".frame").addClass("os-mac");
+        $("body").addClass("os-mac");
     else if ($(this).val() == "lnx") {
-        $(".frame").addClass("os-lnx");
+        $("body").addClass("os-lnx");
     } else {
-        $(".frame").addClass("os-win");
+        $("body").addClass("os-win");
     }
-    
+
 });
+
+
+$('#logoCheck').change(function(e) {
+  if (this.checked){
+    $("#logoImg").show();
+  } else {
+    $("#logoImg").hide();
+  }
+
+});
+
+
